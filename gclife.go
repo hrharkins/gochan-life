@@ -36,13 +36,13 @@ type Nodes struct {
 
 func NewNodes(width, height int, initFn InitFn) *Nodes {
   self := Nodes { width, height, make([]Node, width * height) }
-  for index, _ := range(self.nodes) {
-    (&self.nodes[index]).Init()
+  for index, _ := range self.nodes {
+    self.nodes[index].Init()
   }
-  for index, _ := range(self.nodes) {
+  for index, _ := range self.nodes {
     x := index % self.width
     y := index / self.width
-    (&self.nodes[index]).Start(&self, x, y, initFn(x, y))
+    self.nodes[index].Start(&self, x, y, initFn(x, y))
   }
   return &self
 }
