@@ -3,11 +3,11 @@ gochan-life
 
 Game of life implemented with goroutines and channels
 
-== Why?
+## Why?
 
 Cause I wanted to see what that would look like.
 
-== So, how deos this differ from every other implementation out there?
+## So, how deos this differ from every other implementation out there?
 
 Channels drive all the interactions.  Each node in the game is a goroutine and
 it is connected to its neighbors via channels.
@@ -51,12 +51,12 @@ The main engine function looks like this:
     }
 
 
-== So, how did it perform?
+## So, how did it perform?
 
 On my 1GB single core (i7) VM:
 
 | Columns | Rows | Nodes | FPS | %RAM (via top)
-+---------+------+-------+-----+-------------
+|---------|------|-------|-----|-------------
 | 78      | 20   | 1560  | 488 | 1.2%
 | 160     | 20   | 3200  | 193 | 2.6%
 | 160     | 50   | 8000  | 69  | 6.2%
@@ -67,10 +67,12 @@ On my 1GB single core (i7) VM:
 Beyond that I'd start getting memory failures, etc.  Plus, I think there's a 
 leak in the code somewhere.
 
-== Can I run this wihtout Go?
+It was intended to max out a core.
+
+## Can I run this wihtout Go?
 
 Got Docker?  Then yes you can.  Just run:
 
-docker run rharkins/gochan-life [columns] [rows]
+docker run --rm rharkins/gochan-life [columns] [rows]
 
 
