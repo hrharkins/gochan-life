@@ -75,4 +75,22 @@ Got Docker?  Then yes you can.  Just run:
 
 docker run --rm rharkins/gochan-life [columns] [rows]
 
+## I want to build my own Docker image with this.  How do I do it?
 
+First, install Docker.  Next,
+
+    make build-image
+    
+It will download and build the gochan-life image.  To run it:
+
+    make run-image
+
+Or:
+
+    make run-image WIDTH=[width] HEIGHT=[height]
+    
+To tag your own version and push to Docker:
+
+    git tag gochan-life MYPREFIX/gochan-life
+    git push MYPREFIX/gochan-life
+    
