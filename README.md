@@ -5,7 +5,7 @@ Game of life implemented with goroutines and channels
 
 ## Why?
 
-Cause I wanted to see what that would look like.
+Because I wanted to see what that would look like.
 
 ## So, how deos this differ from every other implementation out there?
 
